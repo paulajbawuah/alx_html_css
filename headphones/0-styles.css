@@ -1,0 +1,225 @@
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-family: source-sans-pro, sans-serif;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+img,
+svg,
+video,
+canvas,
+picture {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+select,
+textarea {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
+:root {
+  --primary-color: #071629;
+  --secondary-color: #FF6565; 
+  --success-color: #fff;
+}
+
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 5%;
+    position: relative;
+    z-index: 2;
+}
+
+.logo img {
+    width: 161px;
+    height: 32px;
+    flex-shrink: 0;
+}
+
+nav ul {
+    display: flex;
+    gap: 41px;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    list-style: none;
+}
+nav ul li a {
+    text-decoration: none;
+    color: var(--success-color);
+    font-weight: bold;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+nav ul li a:hover,
+nav ul li a:active {
+    color: var(--secondary-color);
+    transition: color 0.3s ease-in-out;
+}
+
+
+
+/* Hero Section (:start) */
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 100px 5%;
+    background-image: url('assets/images/headphones_hero_1.jpg');
+    background-size: cover;
+    background-position: center;
+    color: var(--success-color);
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    overflow: hidden;
+
+}
+
+
+.hero h1 {
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    padding-top: 150px;
+    color: var(--success-color);
+}
+
+.hero p {
+    font-size: 16px;
+    margin-bottom: 60px;
+}
+.hero .cta-button {
+    background-color: var(--secondary-color);
+    color: var(--success-color);
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    font-style: normal;
+    line-height: normal;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: none;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.hero .cta-button:hover {
+    color: var(--success-color);
+    transition: all 0.3s ease-in-out;
+    opacity: 0.9;
+}
+
+.hero .cta-button:active {
+    transform: scale(0.95);
+}
+.hero p {
+    font-size: 16px;
+    margin-bottom: 30px;
+    color: var(--success-color);
+}
+
+.hero p:last-child {
+    margin: 40px 0 0;
+    color: var(--success-color);
+    font-size: 16px;
+    line-height: 1.5;
+    max-width: 800px;
+    text-align: center;
+    line-height: 26px;
+    padding: 0 20px;
+    color: var(--success-color);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+
+@media screen and (max-width: 480px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        justify-content: center;
+        padding: 15px 20px;
+    }
+
+    /* Hide the desktop nav by default on mobile */
+    nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 20px;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        z-index: 3;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    /* Hero section tweaks */
+    .hero {
+        padding: 80px 20px;
+        background-position: top;
+    }
+
+    .hero h1 {
+        font-size: 24px;
+        padding-top: 50px;
+    }
+
+    .hero p,
+    .hero .cta-button {
+        font-size: 14px;
+        padding: 12px 20px;
+    }
+}
